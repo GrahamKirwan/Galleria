@@ -1,0 +1,17 @@
+.navbar {
+    padding: 1.4rem 0;
+    border-bottom: 1px solid rgb(207, 207, 207);
+    font-family: 'Libre Baskerville';
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+        color: #7d7d7d;
+        font-weight: 700;
+        line-height: .75rem;
+        font-size: .75rem;
+        letter-spacing: .156rem;
+        text-transform: uppercase;
+    }
+}
