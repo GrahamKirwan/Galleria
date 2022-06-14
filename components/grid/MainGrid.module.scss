@@ -1,0 +1,10 @@
+.mainGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: masonry;
+    gap: 3rem;
+
+    img {
+        width: 100%;
+    }
+}

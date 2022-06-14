@@ -1,8 +1,21 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Navbar from '../components/layout/Navbar'
+import MainGrid from '../components/grid/MainGrid'
+import data from '../data.json'
 
-export default function Home() {
+export async function getStaticProps() {
+  const paintingData = data;
+
+  return {
+      props: {
+        paintingData
+      }
+  }
+}
+
+export default function Home(props) {
+
   return (
     <div className={styles.container}>
       <Head>
@@ -12,8 +25,8 @@ export default function Home() {
       </Head>
 
       <Navbar />
+      <MainGrid paintings={props.paintingData}/>
 
-      
     </div>
   )
 }
