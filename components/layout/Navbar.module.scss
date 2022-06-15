@@ -7,6 +7,11 @@
     align-items: center;
     justify-content: space-between;
 
+    @media screen and (max-width: 768px) {
+        padding: 1rem 0;
+        margin-bottom: 1.5rem;
+    }
+
     a {
         color: #7d7d7d;
         font-weight: 700;
@@ -15,5 +20,19 @@
         letter-spacing: .156rem;
         text-transform: uppercase;
         text-decoration: none;
+
+        @media screen and (max-width: 768px) {
+            font-size: .6rem;
+        }
+    }
+
+
+}
+
+.imageContainer {
+    width: 170px;
+
+    @media screen and (max-width: 768px) {
+        width: 120px;
     }
 }
