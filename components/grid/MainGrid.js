@@ -1,21 +1,21 @@
 import React from 'react'
 import styles from '../grid/MainGrid.module.scss'
+import Column from './Column'
 
 export default function MainGrid({paintings}) {
 
-    let paintingsCol1 = paintings.splice(0,4)
-    let paintingsCol2 = paintings.splice(4,8)
-    let paintingsCol3 = paintings.splice(8,11)
-    let paintingsCol4 = paintings.splice(11,15)
+    let paintingsCol1 = paintings.slice(0,4)
+    let paintingsCol2 = paintings.slice(4,8)
+    let paintingsCol3 = paintings.slice(8,11)
+    let paintingsCol4 = paintings.slice(11,15)
+
 
   return (
     <div className={styles.mainGrid}>
-        <Column paintings={paintingsCol1} />
-        {lessPaintings.map((item, key) => {
-            return (
-                <div key={key}></div>
-            )
-        })}
+        <Column paintings={paintingsCol1} column={1} />
+        <Column paintings={paintingsCol2} column={2} />
+        <Column paintings={paintingsCol3} column={3} />
+        <Column paintings={paintingsCol4} column={4} />
     </div>
   )
 }
