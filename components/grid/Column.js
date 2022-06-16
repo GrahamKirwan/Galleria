@@ -2,7 +2,9 @@ import Link from 'next/link';
 import React from 'react'
 import styles from '../grid/Column.module.scss'
 
+
 export default function Column({paintings, column}) {
+
 
     let colNum;
 
@@ -18,22 +20,21 @@ export default function Column({paintings, column}) {
     if (column == 4) {
         colNum = styles.column4;
     } 
-    
+
 
   return (
     <div className={`${styles.column} ${colNum}`}>
         
         {paintings.map((item, key) => {
-            console.log(item)
             return (
-                <Link href={item.slug}>
+                <Link href={'/'+item.slug} key={key}>
                     <a>
-                        <thumbnail key={key} style={{backgroundImage: `url(${item.images.gallery})`}}>
+                        <section style={{backgroundImage: `url(${item.images.gallery})`}}>
                             <div>
                                 <h2>{item.name}</h2>
                                 <p>{item.artist.name}</p>
                             </div>
-                        </thumbnail>
+                        </section>
                     </a>
                 </Link>
             )
