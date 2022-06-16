@@ -4,9 +4,16 @@ import Image from 'next/image'
 import logo from '../../public/assets/shared/logo.svg'
 import Link from 'next/link'
 
+import { useContext } from 'react'
+import { SlideshowContext } from '../store/slideshowContext'
+
  
 
 function Navbar() {
+
+  const ctx = useContext(SlideshowContext);
+
+
 
   return (
     <nav className={styles.navbar}>
@@ -14,11 +21,7 @@ function Navbar() {
           <Image src={logo} alt="Logo" width={170} height={48}></Image>
         </div>
 
-        <Link href='/starry-night'>
-          <a>Start Slideshow</a>
-        </Link>
-
-        {/* {!ctx.slideshowActive ? (
+        {!ctx.slideshowActive ? (
           <Link href='/starry-night'>
           <a onClick={() => {ctx.updateSlideshowContext(true)}}>Start Slideshow</a>
           
@@ -28,7 +31,7 @@ function Navbar() {
           <a onClick={() => {ctx.updateSlideshowContext(false)}}>Stop Slideshow</a>
           
         </Link>
-        )} */}
+        )}
 
        
     </nav>

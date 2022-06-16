@@ -2,8 +2,13 @@ import Link from 'next/link';
 import React from 'react'
 import styles from '../grid/Column.module.scss'
 
+import { useContext } from 'react'
+import { SlideshowContext } from '../store/slideshowContext'
+
 
 export default function Column({paintings, column}) {
+
+  const ctx = useContext(SlideshowContext);
 
 
     let colNum;
@@ -28,7 +33,7 @@ export default function Column({paintings, column}) {
         {paintings.map((item, key) => {
             return (
                 <Link href={'/'+item.slug} key={key}>
-                    <a>
+                    <a onClick={() => {ctx.updateSlideshowContext(true)}}>
                         <section style={{backgroundImage: `url(${item.images.gallery})`}}>
                             <div>
                                 <h2>{item.name}</h2>

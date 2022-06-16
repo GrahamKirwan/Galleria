@@ -1,9 +1,13 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Head from 'next/head'
 import { getAllPaintingSlugs } from '../lib/helpers'
 import data from '../data.json'
 import styles from '../styles/Home.module.css'
 import Navbar from '../components/layout/Navbar'
+
+import { useContext } from 'react'
+import { SlideshowContext } from '../components/store/slideshowContext'
+
 
 export async function getStaticPaths() {
 
@@ -38,6 +42,12 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Painting({paintingData}) {
+
+  const ctx = useContext(SlideshowContext);
+
+    useEffect(() => {
+        ctx.updateSlideshowContext(true)
+    }, [])
     
   return (
     <div className={styles.container}>
