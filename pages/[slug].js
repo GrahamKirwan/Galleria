@@ -38,12 +38,13 @@ export async function getStaticProps({ params }) {
 
     return {
         props: {
-            paintingData
+            paintingData,
+            data
         }
     }
 }
 
-export default function Painting({paintingData}) {
+export default function Painting({paintingData, data}) {
 
   const ctx = useContext(SlideshowContext);
 
@@ -61,7 +62,7 @@ export default function Painting({paintingData}) {
 
       <Navbar />
       <PaintingInfo paintingData={paintingData} />
-      <FooterBar paintingData={paintingData} />
+      <FooterBar paintingData={paintingData} data={data}/>
 
     </div>
   )
