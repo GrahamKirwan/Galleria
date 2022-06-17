@@ -1,0 +1,45 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6.6rem
+}
+
+.progressContainer {
+    height: 2px;
+    width: 100%;
+    background-color: lightgrey;
+    position: relative;
+}
+
+.progressBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 7%;
+    background-color: black;
+}   
+
+.paintingName {
+    margin: 0;
+    font-weight: 800;
+    padding-top: 1.5rem;
+}
+
+.footerContentContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h4 {
+        color: #3f3f3f;
+        font-weight: 400;
+        font-size: .813rem;
+    }
+
+    div a:nth-child(1) {
+        margin-right: 2rem;
+    }
+}

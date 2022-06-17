@@ -4,6 +4,8 @@ import { getAllPaintingSlugs } from '../lib/helpers'
 import data from '../data.json'
 import styles from '../styles/Home.module.css'
 import Navbar from '../components/layout/Navbar'
+import PaintingInfo from '../components/layout/PaintingInfo'
+import FooterBar from '../components/layout/FooterBar'
 
 import { useContext } from 'react'
 import { SlideshowContext } from '../components/store/slideshowContext'
@@ -58,6 +60,8 @@ export default function Painting({paintingData}) {
       </Head>
 
       <Navbar />
+      <PaintingInfo paintingData={paintingData} />
+      <FooterBar paintingData={paintingData} />
 
     </div>
   )
