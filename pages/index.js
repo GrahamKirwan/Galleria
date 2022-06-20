@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css'
 import Navbar from '../components/layout/Navbar'
 import MainGrid from '../components/grid/MainGrid'
 import data from '../data.json'
+// import data from '../data/index'
 
 export async function getStaticProps() {
   const paintingData = data;
