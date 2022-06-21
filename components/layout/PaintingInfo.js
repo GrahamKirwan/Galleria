@@ -39,7 +39,8 @@ export default function PaintingInfo({paintingData}) {
           </div>
           <div className={styles.artistImage}>
             <div style={{width: '8rem', height: '8rem', position: 'relative'}}>
-              <Image src={"/"+paintingData.artist.image} layout='fill' objectFit='cover' alt={paintingData.artist.name} title={paintingData.artist.name} />
+              {/* <Image src={"/"+paintingData.artist.image} layout='fill' objectFit='cover' alt={paintingData.artist.name} title={paintingData.artist.name} /> */}
+              <Image src={data[paintingData.id-1].artist.image} layout='fill' objectFit='cover' alt={paintingData.artist.name} title={paintingData.artist.name} />
             </div>
           </div>
         </div>
