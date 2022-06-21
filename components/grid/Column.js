@@ -34,7 +34,7 @@ export default function Column({paintings, column}) {
             return (
                 <Link href={'/'+item.slug} key={key}>
                     <a onClick={() => {ctx.updateSlideshowContext(true)}}>
-                        <section style={{backgroundImage: `url(${item.images.gallery})`}}>
+                        <section style={{backgroundImage: `url(${item.images.gallery.src})`}}>
                             <div>
                                 <h2>{item.name}</h2>
                                 <p>{item.artist.name}</p>
