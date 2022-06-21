@@ -26,8 +26,8 @@ export default function PaintingInfo({paintingData}) {
       <div className={styles.container}>
         <div className={styles.leftContainer}>
           <div style={{width: '30rem', height: '37rem', position: 'relative'}}>
-            {/* <Image priority src={"/"+paintingData.images.gallery} layout='fill' objectFit='cover' /> */}
-            <Image priority src={data[paintingData.id-1].images.gallery} layout='fill' objectFit='cover' />
+            <Image priority src={paintingData.images.gallery} layout='fill' objectFit='cover' />
+            {/* <Image priority src={data[paintingData.id-1].images.gallery} layout='fill' objectFit='cover' /> */}
           </div>
           <div className={styles.viewImage} onClick={viewImageClickHandler}>
             <TbArrowsMaximize size="1.3rem" color="white" />
@@ -39,8 +39,8 @@ export default function PaintingInfo({paintingData}) {
           </div>
           <div className={styles.artistImage}>
             <div style={{width: '8rem', height: '8rem', position: 'relative'}}>
-              {/* <Image src={"/"+paintingData.artist.image} layout='fill' objectFit='cover' alt={paintingData.artist.name} title={paintingData.artist.name} /> */}
-              <Image src={data[paintingData.id-1].artist.image} layout='fill' objectFit='cover' alt={paintingData.artist.name} title={paintingData.artist.name} />
+              <Image src={paintingData.artist.image} layout='fill' objectFit='cover' alt={paintingData.artist.name} title={paintingData.artist.name} />
+              {/* <Image src={data[paintingData.id-1].artist.image} layout='fill' objectFit='cover' alt={paintingData.artist.name} title={paintingData.artist.name} /> */}
             </div>
           </div>
         </div>
@@ -55,7 +55,7 @@ export default function PaintingInfo({paintingData}) {
 
       <div className={styles.overlay} style={{display: overlayVisible ? 'block' : 'none'}} onClick={overlayClickHandler}>
         <div style={{width: '30rem', height: '37rem', position: 'relative'}}>
-          <Image priority src={"/"+paintingData.images.gallery} layout='fill' objectFit='cover' />
+          <Image priority src={paintingData.images.gallery} layout='fill' objectFit='cover' />
           <p className={styles.close}>CLOSE</p>
         </div>
       </div>
