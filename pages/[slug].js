@@ -11,6 +11,8 @@ import FooterBar from '../components/layout/FooterBar'
 import { useContext } from 'react'
 import { SlideshowContext } from '../components/store/slideshowContext'
 
+import { AnimatePresence } from 'framer-motion'
+
 
 export async function getStaticPaths() {
 
@@ -62,9 +64,11 @@ export default function Painting({paintingData, data}) {
       </Head>
 
       <Navbar />
-      <PaintingInfo paintingData={paintingData} />
-      <FooterBar paintingData={paintingData} data={data}/>
-
+      <AnimatePresence exitBeforeEnter initial={false}>
+        <PaintingInfo paintingData={paintingData} key={paintingData.name}/>
+        <FooterBar paintingData={paintingData} data={data} key={paintingData.name}/>
+      </AnimatePresence>
+      
     </div>
   )
 }

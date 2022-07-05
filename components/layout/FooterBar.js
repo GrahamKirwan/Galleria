@@ -5,6 +5,9 @@ import containerStyles from "../../styles/Home.module.css";
 
 import { TbPlayerSkipForward, TbPlayerSkipBack } from "react-icons/tb";
 
+import { motion } from "framer-motion";
+import {framer_name} from './framerFooter'
+
 export default function FooterBar({ paintingData, data }) {
 
   let nextLink = data[paintingData.id] && data[paintingData.id].slug;
@@ -21,10 +24,10 @@ export default function FooterBar({ paintingData, data }) {
         <div className={styles.progressBar} style={{ width: percentageBar }}></div>
         <div className={containerStyles.container}>
           <div className={styles.footerContentContainer}>
-            <div>
+            <motion.div {...framer_name}>
               <h3 className={styles.paintingName}>{paintingData.name}</h3>
               <h4>{paintingData.artist.name}</h4>
-            </div>
+            </motion.div>
             <div>
               {paintingData.slug == "starry-night" ? (
                 <a>

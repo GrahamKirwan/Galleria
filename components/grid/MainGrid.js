@@ -2,6 +2,9 @@ import React from 'react'
 import styles from '../grid/MainGrid.module.scss'
 import Column from './Column'
 
+import { motion } from 'framer-motion'
+import { framer_variants } from './framer'
+
 export default function MainGrid({paintings}) {
 
     let paintingsCol1 = paintings.filter((item) => {
@@ -27,11 +30,11 @@ export default function MainGrid({paintings}) {
 
 
   return (
-    <div className={styles.mainGrid}>
+    <motion.div {...framer_variants} className={styles.mainGrid}>
         <Column paintings={paintingsCol1} column={1} />
         <Column paintings={paintingsCol2} column={2} />
         <Column paintings={paintingsCol3} column={3} />
         <Column paintings={paintingsCol4} column={4} />
-    </div>
+    </motion.div>
   )
 }

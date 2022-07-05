@@ -5,6 +5,8 @@ import MainGrid from '../components/grid/MainGrid'
 // import data from '../data.json'
 import {data} from '../data/index' 
 
+import { motion } from 'framer-motion'
+
 export async function getStaticProps() {
   const paintingData = data;
 
