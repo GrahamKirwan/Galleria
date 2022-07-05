@@ -64,7 +64,7 @@ export default function Painting({paintingData, data}) {
       </Head>
 
       <Navbar />
-      <AnimatePresence exitBeforeEnter initial={false}>
+      <AnimatePresence exitBeforeEnter>
         <PaintingInfo paintingData={paintingData} key={paintingData.name}/>
         <FooterBar paintingData={paintingData} data={data} key={paintingData.name}/>
       </AnimatePresence>
