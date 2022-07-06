@@ -6,22 +6,23 @@ import containerStyles from "../../styles/Home.module.css";
 import { TbPlayerSkipForward, TbPlayerSkipBack } from "react-icons/tb";
 
 import { motion } from "framer-motion";
-import {framer_name} from './framerFooter'
+import {framer_name, framer_bar} from './framerFooter'
 
 export default function FooterBar({ paintingData, data }) {
 
   let nextLink = data[paintingData.id] && data[paintingData.id].slug;
   let prevLink = data[paintingData.id - 2] && data[paintingData.id - 2].slug;
 
-  let percentageBar = (100/15) * paintingData.id;
+  // let percentageBar = (100/15) * paintingData.id;
 
-  percentageBar = percentageBar.toString().concat('%');
+  // percentageBar = percentageBar.toString().concat('%');
 
 
   return (
     <footer className={styles.footer}>
       <div className={styles.progressContainer}>
-        <div className={styles.progressBar} style={{ width: percentageBar }}></div>
+        {/* <motion.div {...framer_bar(percentageBar)} className={styles.progressBar} style={{ width: percentageBar }}></motion.div> */}
+        <motion.div {...framer_bar(paintingData.id)} className={styles.progressBar}></motion.div>
         <div className={containerStyles.container}>
           <div className={styles.footerContentContainer}>
             <motion.div {...framer_name}>
